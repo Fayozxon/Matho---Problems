@@ -1,0 +1,322 @@
+// sass main.scss main.css --watch
+@use "./variables" as var;
+
+// Core
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: var.$dark-blue;
+    scroll-behavior: smooth;
+}
+
+// Button
+.btn {
+    padding: 5px 20px;
+    font-size: 16px;
+    color: var.$white;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: var.$light-blue;
+    border-radius: 7px;
+    border: 1px solid var.$light-blue;
+    box-shadow: var.$blue-shadow;
+    transition: 0.4s;
+
+    &:hover {
+        background: transparent;
+        color: var.$light-blue;
+    }
+}
+
+// Header
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #fff, #fff, #fff, transparent);
+    z-index: 100;
+
+    &__brand {
+        img {
+            width: 230px;
+        }
+    }
+}
+
+.top-button {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    font-size: 12px;
+    width: 40px;
+    height: 40px;
+    background: var.$white;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    z-index: 100;
+    transition: 0.4s;
+    opacity: 0;
+    pointer-events: none;
+
+    &.active {
+        opacity: 100%;
+        pointer-events: all;
+    }
+}
+
+// Navbar
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background: var.$white;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -10px 20px rgba(0,0,0,0.05);
+
+    .nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 430px;
+        list-style: none;
+
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        a {
+            position: relative;
+            font-size: 18px;
+            text-transform: uppercase;
+            text-decoration: none;
+            opacity: 60%;
+
+            
+
+            &.active {
+                font-weight: 600;
+                opacity: 100%;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: -35px;
+                    left: 0;
+                    width: 100%;
+                    height: 18px;
+                    background-color: var.$light-blue;
+                    border-radius: 50px;
+                    z-index: -1;
+                }
+            }
+
+            i {
+                padding-right: 7px;
+                font-size: 14px;
+                transform: translateY(-2px);
+            }
+        }
+    }
+}
+
+// Formulas Section
+.formulas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 230px;
+    padding-bottom: 150px;
+
+    &__title {
+        padding-top: 25px;
+        padding-bottom: 10px;
+        font-size: 20px;
+        font-weight: 400;
+        text-align: center;
+        opacity: 80%;
+
+        i {
+            padding-left: 5px;
+        }
+    }
+
+    .formula {
+        position: relative;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(180, 180, 180, 30%);
+        // height: 80px;
+        overflow: hidden;
+        transition: 0.4s;
+
+        &.full {
+            height: 260px;
+
+            .btn {
+                opacity: 100%;
+                pointer-events: all;
+            }
+
+            .formula-btn {
+                transform: rotate(180deg);
+            }
+        }
+
+        &__head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 40px;
+
+            .icon {
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                background: var.$light-blue;
+                box-shadow: var.$blue-shadow;
+            }
+
+            h3 {
+                width: 70%;
+                font-weight: 400;
+                text-transform: capitalize;
+            }
+
+            .formula-btn {
+                opacity: 0;
+                pointer-events: none;
+                padding: 5px;
+                background: none;
+                border: none;
+                font-size: 16px;
+                transition: 0.4s;
+                cursor: pointer;
+            }
+        }
+
+        &__info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 180px;
+            text-align: center;
+
+            p {
+                padding-bottom: 20px;
+                font-size: 22px;
+                color: var.$grey;
+            }
+
+            .btn {
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                // opacity: 0;
+                // pointer-events: none;
+            }
+        }
+    }
+}
+
+// Dark Mode Styles
+body.dark {
+    background: var.$dark;
+
+    * {
+        color: var.$white;
+    }
+    
+    // Header
+    .header {
+        background: linear-gradient(to bottom, var.$dark, var.$dark, transparent);
+
+        img {
+            filter: invert(1);
+        }
+    }
+
+    // Navbar
+    .navbar {
+        background: #181818;
+        box-shadow: 0 -7px 25px rgba(0,0,0,0.2);
+
+        a.active::before {
+            height: 15px;
+        }
+    }
+
+    // Formulas
+    .formula {
+        background: #181818;
+        box-shadow: 0 7px 25px rgba(0,0,0,0.25);
+
+        p {
+            color: var.$white;
+        }
+    }
+}
+
+// RWD Styles
+@media only screen and (max-width: 767px) {
+    // Header
+    .header {
+        height: 150px;
+
+        img {
+            width: 160px;
+        }
+    }
+    // Navbar
+    .navbar {
+        .nav {
+            width: 270px;
+
+            a {
+                font-size: 15px;
+            }
+
+            i {
+                display: none;
+            }
+        }
+    }
+    // Formulas
+    .formulas {
+        padding-top: 150px;
+
+        .formula {
+            height: 80px;
+
+            .formula-btn {
+                opacity: 100%;
+                pointer-events: all;
+            }
+
+            .btn {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+    }
+}
