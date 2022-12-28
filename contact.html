@@ -9,6 +9,7 @@
     <!-- Links -->
     <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="">
@@ -41,11 +42,29 @@
         </ul>
     </nav>
 
-    <!-- To Top Button -->
-    <a href="#top" class="top-button">
-        <i class="fa-solid fa-chevron-up"></i>
-    </a>
-    <a id="top"></a>
+    <!-- Contact Form -->
+    <div class="container contact">
+        <form method="GET" action="./index.html" class="form row align-items-center justify-content-center">
+            <label for="formulaName" class="group-title">Formula nomi:</label>
+            <input type="text" name="formulaName" id="formulaName" class="col-10 col-md-4 col-lg-3 input" placeholder="masalan: yuza">
+
+            <label for="formula" class="group-title">Formula:</label>
+            <input type="text" name="formula" id="formula" class="col-10 col-md-4 col-lg-3 input" placeholder="masalan: S=ab">
+
+            <label class="group-title"></label>
+            <button type="submit" class="btn col-10 col-md-4 col-lg-3">Yuborish</button>
+        </form>
+        <form method="GET" action="./index.html" class="form row align-items-center justify-content-center">
+            <label for="email" class="group-title">E-mail:</label>
+            <input type="email" name="email" id="email" class="col-10 col-md-4 col-lg-3 input" placeholder="masalan@mail.com">
+
+            <label for="msg" class="group-title">Taklifingiz:</label>
+            <textarea name="msg" id="msg" class="col-10 col-md-4 col-lg-3 input" placeholder="Matn..."></textarea>
+
+            <label class="group-title"></label>
+            <button type="submit" class="btn col-10 col-md-4 col-lg-3">Yuborish</button>
+        </form>
+    </div>
 
     <!-- Scripts -->
     <script src="./js/main.js"></script>

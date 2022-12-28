@@ -1,0 +1,15 @@
+.container.contact {
+  padding-top: 180px;
+  padding-bottom: 150px;
+}
+.container.contact .group-title {
+  padding: 7px 0;
+}
+.container.contact .form {
+  padding: 40px 0;
+}
+.container.contact .form textarea {
+  height: 170px;
+}
+
+/*# sourceMappingURL=contact.css.map */

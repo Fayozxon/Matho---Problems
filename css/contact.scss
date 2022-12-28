@@ -1,0 +1,19 @@
+// sass contact.scss contact.css --watch
+@use "./variables" as var;
+
+.container.contact {
+    padding-top: 180px;
+    padding-bottom: 150px;
+
+    .group-title {
+        padding: 7px 0;
+    }
+
+    .form {
+        padding: 40px 0;
+
+        textarea {
+            height: 170px;
+        }
+    }
+}

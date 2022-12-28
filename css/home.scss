@@ -1,0 +1,127 @@
+// sass home.scss home.css --watch
+@use "./variables" as var;
+
+
+// Formulas Section
+.formulas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 230px;
+    padding-bottom: 150px;
+
+    .formula {
+        position: relative;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(180, 180, 180, 30%);
+        // height: 80px;
+        overflow: hidden;
+        transition: 0.4s;
+
+        &.full {
+            height: 260px;
+
+            .btn {
+                opacity: 100%;
+                pointer-events: all;
+            }
+
+            .formula-btn {
+                transform: rotate(180deg);
+            }
+        }
+
+        &__head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 40px;
+
+            .icon {
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                background: var.$light-blue;
+                box-shadow: var.$blue-shadow;
+            }
+
+            h3 {
+                width: 70%;
+                font-weight: 400;
+                text-transform: capitalize;
+            }
+
+            .formula-btn {
+                opacity: 0;
+                pointer-events: none;
+                padding: 5px;
+                background: none;
+                border: none;
+                font-size: 16px;
+                transition: 0.4s;
+                cursor: pointer;
+            }
+        }
+
+        &__info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 180px;
+            text-align: center;
+
+            p {
+                padding-bottom: 20px;
+                font-size: 22px;
+                color: var.$grey;
+            }
+
+            .btn {
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                // opacity: 0;
+                // pointer-events: none;
+            }
+        }
+    }
+}
+
+// Dark Mode Styles
+body.dark {
+    // Formulas
+    .formula {
+        background: #181818;
+        box-shadow: 0 7px 25px rgba(0,0,0,0.25);
+
+        p {
+            color: var.$white;
+        }
+    }
+}
+
+// RWD Styles
+@media only screen and (max-width: 767px) {
+    // Formulas
+    .formulas {
+        padding-top: 150px;
+
+        .formula {
+            height: 80px;
+
+            .formula-btn {
+                opacity: 100%;
+                pointer-events: all;
+            }
+
+            .btn {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+    }
+}

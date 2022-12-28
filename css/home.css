@@ -1,0 +1,100 @@
+.formulas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 230px;
+  padding-bottom: 150px;
+}
+.formulas .formula {
+  position: relative;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(180, 180, 180, 0.3);
+  overflow: hidden;
+  transition: 0.4s;
+}
+.formulas .formula.full {
+  height: 260px;
+}
+.formulas .formula.full .btn {
+  opacity: 100%;
+  pointer-events: all;
+}
+.formulas .formula.full .formula-btn {
+  transform: rotate(180deg);
+}
+.formulas .formula__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
+.formulas .formula__head .icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #00C7FB;
+  box-shadow: 0 2px 5px rgba(0, 199, 251, 0.4), inset 0 4px 5px rgba(255, 255, 255, 0.16);
+}
+.formulas .formula__head h3 {
+  width: 70%;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+.formulas .formula__head .formula-btn {
+  opacity: 0;
+  pointer-events: none;
+  padding: 5px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.formulas .formula__info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 180px;
+  text-align: center;
+}
+.formulas .formula__info p {
+  padding-bottom: 20px;
+  font-size: 22px;
+  color: #707070;
+}
+.formulas .formula__info .btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+body.dark .formula {
+  background: #181818;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.25);
+}
+body.dark .formula p {
+  color: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+  .formulas {
+    padding-top: 150px;
+  }
+  .formulas .formula {
+    height: 80px;
+  }
+  .formulas .formula .formula-btn {
+    opacity: 100%;
+    pointer-events: all;
+  }
+  .formulas .formula .btn {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */
